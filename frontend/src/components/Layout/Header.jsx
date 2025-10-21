@@ -1,12 +1,19 @@
+
 import React from "react";
-export default function Header(){
+
+export default function Header(){ 
+  
   return (
     <header className="app-header">
-      <div className="brand">
+      <div style={{display:'flex',alignItems:'center',gap:12}}>
         <div className="logo">PD</div>
-        <h1>Panel de Pagos</h1>
+        <div>
+          <div style={{fontSize:16,fontWeight:700}}>Panel de Pagos</div>
+          <div style={{fontSize:12,color:'rgba(255,255,255,0.9)'}}>Frontend 1</div>
+        </div>
       </div>
-      <div className="user">Admin • Fabricio</div>
+          <div style={{fontSize:14}}>Admin • Fabricio</div>
     </header>
   );
-}   
+
+}

@@ -3,6 +3,7 @@
 import { createPayment } from "../service/paymentService";
 
 export default function PaymentButton({ paymentData }) {
+  
   const handleClick = async () => {
     try {
       const result = await createPayment(paymentData);
@@ -15,5 +16,6 @@ export default function PaymentButton({ paymentData }) {
   };
 
   return <button onClick={handleClick}>Registrar pago</button>;
+  
 }
 
