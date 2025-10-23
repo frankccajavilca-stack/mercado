@@ -18,27 +18,38 @@ export default function PaymentStatus(){
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        try{
-            const envioResponse = await api.post("/api/payments/create/", {
-                appointmentId,
-                contactId,
-                amount,
-                description
-            });
+        if(!payment_id || !appointmentId || !contactId || !amount || !description){
+            console.error("Debes completar todos los campos.");
+        } else{
+            
+            try{
+                const envioResponse = await api.post("/api/payments/create/", {
+                    appointmentId,
+                    contactId,
+                    amount,
+                    description
+                });
 
-            // Mostrar respuesta del backend
-            console.log("Respuesta:", envioResponse.data);
+                // Mostrar respuesta del backend
+                console.log("Respuesta:", envioResponse.data);
 
-            // Actualizar estado con datos recibidos
-            setPayment_id(envioResponse.data.payment_id);
+                // Actualizar estado con datos recibidos
+                setPayment_id(envioResponse.data.payment_id);
 
-            alert("Pago creado correctamente ✅");
+                alert("Pago creado correctamente ✅");
 
-        }catch{
-            console.error("Error al momento de pago");
-            console.warn("Backend no disponible, usando datos falsos...");
-            const fakeResponse = { data: { payment_id: "fake_001" } };
-            setPayment_id(fakeResponse.data.payment_id);
+            } catch{
+                alert("Error al momento de pago");
+                console.error("Error al momento de pago");
+                console.warn("Backend no disponible, usando datos falsos...");
+                const fakeResponse = { data: { payment_id: "fake_001" } };
+
+                setPayment_id(fakeResponse.data.payment_id);
+                setAppointmentId("");
+                setContactId("");
+                setAmount("");
+                setdescription("");
+            }
         }
 
     };
@@ -82,6 +93,7 @@ export default function PaymentStatus(){
                             value={payment_id || ""}
                             onChange={(e) => setPayment_id(e.target.value)} 
                             placeholder="ID del cliente"
+                            required
                         />
                         <input 
                             type="text"
@@ -89,6 +101,7 @@ export default function PaymentStatus(){
                             value={appointmentId || ""}
                             onChange={(e) => setAppointmentId(e.target.value)} 
                             placeholder="zzz"
+                            required
                         />
                         <input 
                             type="text"
@@ -96,6 +109,7 @@ export default function PaymentStatus(){
                             value={contactId || ""}
                             onChange={(e) => setContactId(e.target.value)} 
                             placeholder="contactoId"
+                            required
                         />
                         <input 
                             type="number"
@@ -103,6 +117,7 @@ export default function PaymentStatus(){
                             value={amount || ""}
                             onChange={(e) => setAmount(e.target.value)} 
                             placeholder="monto"
+                            required
                         />
                         <input 
                             type="text"
@@ -110,6 +125,7 @@ export default function PaymentStatus(){
                             value={description || ""}
                             onChange={(e) => setdescription(e.target.value)} 
                             placeholder="Descripción"
+                            required
                         />
                     </div>
                     <button type="submit" className="btn-pago-register">Completar</button>
