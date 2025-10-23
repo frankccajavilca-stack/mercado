@@ -18,11 +18,11 @@ export default function Sidebar(){
           </li>
 
           <li style={{marginBottom:10}}>
-            <a href="#">Pagos</a> 
+            <NavLink to="/registrar" className={({isActive})=> isActive ? 'active' : ''}>Registrar Pagos</NavLink>
           </li>
           
           <li>
-            <a href="#">Reportes</a>
+            <NavLink to="/reportes" className={({isActive})=> isActive ? 'active' : ''}>Reportes</NavLink>
           </li>
       </ul>
       

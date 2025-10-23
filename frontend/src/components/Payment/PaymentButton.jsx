@@ -1,6 +1,6 @@
 " yooooo Edwin "
 
-import { createPayment } from "../service/paymentService";
+// import { createPayment } from "../service/paymentService";
 
 export default function PaymentButton({ paymentData }) {
   
@@ -15,7 +15,7 @@ export default function PaymentButton({ paymentData }) {
     }
   };
 
-  return <button onClick={handleClick}>Registrar pago</button>;
+  return <button onClick={handleClick} className="btn-pago-register">Registrar pago</button>;
   
 }
 

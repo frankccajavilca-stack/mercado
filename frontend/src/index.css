@@ -2,6 +2,8 @@
   box-sizing:border-box;
   margin:0;
   padding:0;
+  text-decoration: none;
+  list-style: none;
 }
 :root{
   --blue-700:#1e40af;
@@ -112,4 +114,21 @@ table tbody td{
 }
 .status-rejected{
   background:#ef4444;
+}
+
+.inputs{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 1rem;
+}
+.PayFormInput{
+  height: 2.5rem;
+  text-align: center;
+}
+.btn-pago-register{
+  height: 2rem;
+  background-color: var(--blue-700);
+  color: var(--bg);
+  border: none;
+  border-radius: 20px;
 }
