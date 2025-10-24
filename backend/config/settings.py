@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+# Carga las variables de entorno para usarlas en las settings (ej. TIME_ZONE)
+load_dotenv() 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -37,10 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ghl',
-    'payments',
+    'apps.payments',
+    'apps.metrics',
     'rest_framework',
     'corsheaders',
+    'apps.appointments',
 ]
 
 MIDDLEWARE = [
@@ -106,10 +112,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
+LANGUAGE_CODE = 'es-la' # Sugerencia: ajustado al español latinoamericano
+#LANGUAGE_CODE = 'en-us'
 
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Lima' 
 
 USE_I18N = True
 
@@ -137,8 +143,24 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ],
 }
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
+    'DEFAULT_PARSER_CLASSES': [
+        'rest_framework.parsers.JSONParser',
+        'rest_framework.parsers.FormParser',
+        'rest_framework.parsers.MultiPartParser',
+    ],
+}
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # URL de Vite (React)
 ]
 CORS_ALLOW_CREDENTIALS = True
+
+ALLOWED_HOSTS = [
+    '127.0.0.1',             # Permite acceso local
+    'localhost',             # Permite acceso local
+    '293075806313.ngrok-free.app' # <--- ¡AGREGA ESTA LÍNEA!
+]
