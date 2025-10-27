@@ -42,11 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.appointments',
     'apps.payments',
     'apps.metrics',
     'rest_framework',
     'corsheaders',
-    'apps.appointments',
+    'django_extensions',
+    
 ]
 
 MIDDLEWARE = [
@@ -160,7 +162,7 @@ CORS_ALLOWED_ORIGINS = [
 CORS_ALLOW_CREDENTIALS = True
 
 ALLOWED_HOSTS = [
-    '127.0.0.1',             # Permite acceso local
-    'localhost',             # Permite acceso local
-    '293075806313.ngrok-free.app' # <--- ¡AGREGA ESTA LÍNEA!
+    '127.0.0.1',
+    'localhost',
+    'sightly-unsought-margert.ngrok-free.dev',  # permite todos los subdominios de ngrok
 ]
