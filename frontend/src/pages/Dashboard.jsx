@@ -20,7 +20,8 @@ export default function Dashboard(){
       const pagos=[ 
         {payment_id:'p_001',contact_id:'c_01',amount:50,status:'aprobado'}, 
         {payment_id:'p_002',contact_id:'c_02',amount:20,status:'pendiente'}, 
-        {payment_id:'p_003',contact_id:'c_03',amount:75,status:'rechazados'} 
+        {payment_id:'p_003',contact_id:'c_03',amount:75,status:'rechazados'},
+        {payment_id:'p_004',contact_id:'c_04',amount:90,status:'rechazados'} 
       ]; 
       setStats({ 
         total:pagos.length, 
@@ -59,7 +60,6 @@ export default function Dashboard(){
         </div>
       </div>
           <PaymentList/>
-          <PaymentForm/>
     </div>
     ); 
     

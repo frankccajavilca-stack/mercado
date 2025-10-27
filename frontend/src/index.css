@@ -87,12 +87,13 @@ table.payments-table{
   width:100%;
   border-collapse:collapse;
   margin-top:12px;
+  text-align: center;
 }
 table thead th{
   background:var(--blue-700);
   color:#fff;
   padding:10px;
-  text-align:left;
+  text-align:center;
 }
 table tbody td{
   background:#fff;
@@ -131,4 +132,12 @@ table tbody td{
   color: var(--bg);
   border: none;
   border-radius: 20px;
+}
+.btn-ver-list{
+  background-color: var(--blue-600);
+  padding: .5rem 1rem;
+  border-radius: 10px;
+  color: white;
+  font-weight: 500;
+  border: #111827;
 }
