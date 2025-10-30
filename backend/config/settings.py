@@ -135,17 +135,24 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Django REST Framework Configuration
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",  # URL de Vite (React)
+    "http://localhost:3000",  # CRA
+]
+CORS_ALLOW_CREDENTIALS = True
+
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    'sightly-unsought-margert.ngrok-free.dev',  # permite todos los subdominios de ngrok
+]
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
-        # O token/jwt según tu app
     ],
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
-    ],
-}
-REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ],
@@ -155,14 +162,3 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.MultiPartParser',
     ],
 }
-
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # URL de Vite (React)
-]
-CORS_ALLOW_CREDENTIALS = True
-
-ALLOWED_HOSTS = [
-    '127.0.0.1',
-    'localhost',
-    'sightly-unsought-margert.ngrok-free.dev',  # permite todos los subdominios de ngrok
-]

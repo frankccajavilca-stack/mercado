@@ -38,3 +38,9 @@ urlpatterns = [
     # path('payment-failure/', PaymentFailureView.as_view(), name='payment-failure'),
     # ----------------------------------------------------
 ]
+
+# --- RUTA PARA SERVIR REACT (PRODUCCIÓN) ---
+#urlpatterns += [
+    # cualquier ruta que no comience con /api/ servirá el build de React
+ #   re_path(r"^(?!api/).*", TemplateView.as_view(template_name="index.html")),
+#]

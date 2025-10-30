@@ -12,10 +12,18 @@ export default function PaymentList() {
       .then((res) => setPayments(Array.isArray(res.data) ? res.data : []))
       .catch(() =>
         setPayments([
-          { payment_id: "p_001", contact_id: "c_01", amount: 50, status: "aprobado" },
-          { payment_id: "p_002", contact_id: "c_02", amount: 20, status: "pendiente" },
-          { payment_id: "p_003", contact_id: "c_03", amount: 75, status: "rechazado" },
-          { payment_id: "p_004", contact_id: "c_04", amount: 90, status: "rechazado" },
+        {payment_id:'ak3K3VcPU0iP454OgAVa',contact_id:'ak3K3VcPU0iP454OgAVa',amount:150,status:'aprobado'}, 
+        {payment_id:'rCm2VOMTuHbIt5G3aP5h',contact_id:'rCm2VOMTuHbIt5G3aP5h',amount:150,status:'pendiente'}, 
+        {payment_id:'rCm2VOMTuHbIt5G3aP5h',contact_id:'rCm2VOMTuHbIt5G3aP5h',amount:150,status:'rechazados'},
+        {payment_id:'APPT001',contact_id:'CONTACT001',amount:150,status:'rechazados'},
+        {payment_id:'APPT002',contact_id:'CONTACT002',amount:150,status:'aprobado'}, 
+        {payment_id:'APPT003',contact_id:'CONTACT003',amount:150,status:'pendiente'}, 
+        {payment_id:'rCm2VOMTuHbIt5G3aP5h',contact_id:'rCm2VOMTuHbIt5G3aP5h',amount:150,status:'rechazados'},
+        {payment_id:'ak3K3VcPU0iP454OgAVa',contact_id:'ak3K3VcPU0iP454OgAVa',amount:150,status:'rechazados'},
+        {payment_id:'ak3K3VcPU0iP454OgAVa',contact_id:'ak3K3VcPU0iP454OgAVa',amount:150,status:'aprobado'}, 
+        {payment_id:'rCm2VOMTuHbIt5G3aP5h',contact_id:'rCm2VOMTuHbIt5G3aP5h',amount:150,status:'pendiente'}, 
+        {payment_id:'rCm2VOMTuHbIt5G3aP5h',contact_id:'rCm2VOMTuHbIt5G3aP5h',amount:150,status:'rechazados'}
+         
         ])
       );
   }, []);

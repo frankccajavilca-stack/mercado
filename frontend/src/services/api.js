@@ -1,9 +1,12 @@
-
-
 import axios from "axios";
 
+const API_URL =
+  process.env.NODE_ENV === "development"
+    ? "http://127.0.0.1:8000/api/"
+    : "/api/";
+
 const api = axios.create({
-  baseURL: "http://localhost:3000/api",
+  baseURL: API_URL,
 });
 
 export default api;
