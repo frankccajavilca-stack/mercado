@@ -13,7 +13,7 @@ export default function Header(){
           <div style={{fontSize:12,color:'rgba(255,255,255,0.9)'}}>Frontend 1</div>
         </div>
       </div>
-          <div style={{fontSize:14}}>Admin • Fabricio</div>
+          <div style={{fontSize:14}}>Admin • Developers</div>
     </header>
   );
 
